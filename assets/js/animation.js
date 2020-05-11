@@ -1,7 +1,7 @@
 
 function update_users_count() {
-    $('#cc.compteur b').animate({
-        counter: ~~(Math.random() * 258)
+    $('#cc').animate({
+        counter: ~~(Math.random() * 1040)
     }, {
         duration: 6000,
         easing: 'swing',
@@ -10,8 +10,8 @@ function update_users_count() {
         },
         complete: update_users_count
     });
-    $('#mr.compteur b').animate({
-        counter: ~~(Math.random() * 7)
+    $('#gr').animate({
+        counter: ~~(Math.random() * 656)
     }, {
         duration: 6000,
         easing: 'swing',
@@ -20,10 +20,10 @@ function update_users_count() {
         },
         complete: update_users_count
     });
-    $('#gr.compteur b').animate({
-        counter: ~~(Math.random() * 3)
+    $('#mr').animate({
+        counter: ~~(Math.random() * 45)
     }, {
-        durtion: 6000,
+        duration: 6000,
         easing: 'swing',
         step: function(now) {
             $(this).text(Math.ceil(now));

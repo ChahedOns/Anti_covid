@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 
 <head>
-    <title>inscription</title>
+    <title>inscription </title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/theme/cosmo.min.css">
@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top mb-10">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top mb-10">
         <a href="../../index.php">
             <img src="../img/logo.png" width="70px">
         </a>
@@ -37,14 +37,13 @@
                 <li class="nav-item">
                     <a class="nav-link " href="interact.php">Interaction <span class="sr-only">(current)</span> </a>
                 </li>
-                
-
+                <li class="nav-item">
+                    <a class="nav-link " href="reps.php">Réponses <span class="sr-only">(current)</span> </a>
+                </li>
             </ul>
 
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-
+            <form class="form-inline my-2 my-lg-0" method="POST" action="assets/html/auth.php">
+            <button class="btn btn-danger my-2 my-sm-0" type="submit" name="login">Se connecter</button>
             </form>
 
         </div>

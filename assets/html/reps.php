@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
-<title>Interactions</title>
+<title>Réponses</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/theme/cosmo.min.css">
     <link rel="stylesheet" href="../css/theme/bootstrap.min.css ">
@@ -17,11 +17,12 @@
     <link rel="stylesheet" href="../css/theme/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/yourcode.js"></script>
 </head>
-<body class="bg-trasparent "style=" background-image:url('../img/34.jpg'); background-position: center;
+<body style="background-image: url('../img/25.png');background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;height: 50%; background-attachment: fixed">
+  background-size: cover;height: 50%; background-attachment: fixed;
+                    ">
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top mb-10">
-<a class="navbar-brand" href="../../index.php">Anti covid 19</a>
+        <a class="navbar-brand" href="../../index.php">Anti covid 19</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
             aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -33,17 +34,17 @@
                     <a class="nav-link " href="../../index.php">Acceuil <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="reps.php">Réponses </a>
+                    <a class="nav-link" href="interact.php">Interactions </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="stat.php">Statistique </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="reponse.php"> Répondre </a>
+                    <a class="nav-link" href="ask.php"> Demender </a>
                 </li>
            
             </ul>
-            <?php
+    <?php
             
             if(isset($_SESSION['email_user'] ))
             {
@@ -71,30 +72,29 @@
             }
             echo '
              <form class="form-inline my-2 my-lg-0" method="POST" action="../../includes/logout.php">
-            <button class="btn btn-light my-2 my-sm-0" type="submit" name="logout">Se déconecter</button>
+            <button class="btn btn-light my-2 my-sm-0" type="submit" name="logout">Se déconcter</button>
             </form> ';
             }
             else{
             echo ' <form class="form-inline my-2 my-lg-0" method="POST" action="auth.php">
-            <button class="btn btn-light my-2 my-sm-0" type="submit" name="login">Se connecter</button>
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit" name="login">Se connecter</button>
             </form>
             <form class="form-inline my-2 my-lg-0" method="POST" action="inscriptot.php">
-            <button class="btn btn-light my-2 my-sm-0" type="submit" name="insci">inscription</button>
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit" name="insci">inscription</button>
             </form> ';}
-            ?>
+    ?>
             
         </div>
-    </nav>
+</nav>
  
-    <div class="container 
-    bg-trasparent" style="background-color:transparent">
-        <div class="jumbotron bg-trasparent"style="background-color:transparent" >
-
-            <br><br>
+    <div class="container view bg-transparent
+        " >
     
-<?php
-require '../../includes/interaction.php';
-?>
+    <?php
+            
+            require '../../includes/reponses.php';
+            
+    ?>
   
 
 

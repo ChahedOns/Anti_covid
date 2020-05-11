@@ -19,13 +19,15 @@
 
 </head>
 
-<body style="background-color: rgb(255, 253, 253);">
+<body class="bg-trasparent "style=" background-image:url('assets/img/30.jpg'); background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;height: 50%; background-attachment: fixed">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top mb-10">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent sticky-top mb-10">
         <a href="index.php">
             <img src="assets//img/logo.png" width="70px">
         </a>
-        <a class="navbar-brand" href="index.php">Anti covid-army</a>
+        <a class="navbar-brand" href="index.php"style="color:white">Anti covid-army</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
             aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -38,74 +40,120 @@
 
             </ul>
 
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-
-            </form>
+            
             <?php
-            if(isset($_SESSION['pw_user']))
+            if(isset($_SESSION['email_user'] ))
             {
-            echo '<form class="form-inline my-2 my-lg-0" method="POST" action="assets/html/logout.php">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit" name="logout">Se déconcter</button>
+            
+            require 'includes/database.php';
+            $mail=$_SESSION['email_user'];
+            $r =" SELECT * from medecin where email ='$mail'";
+            $stmt = mysqli_stmt_init($conn);
+            if(!mysqli_stmt_prepare($stmt,$r)){
+                    echo mysl_error();
+            }
+            else {
+            
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+                if($row = mysqli_fetch_array($result)){
+                    echo '<div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav mr-auto"><li class="nav-item active ">
+                <a class="nav-link " href="assets/html/interact.php"style="color:white">Interactions <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active ">
+                <a class="nav-link " href="assets/html/reps.php"style="color:white">Réponses <span class="sr-only">(current)</span></a>
+            </li></ul></div>
+             <form class="form-inline my-2 my-lg-0" method="POST" action="assets/html/meddesh.php">
+                    <button class="btn btn-danger my-2 my-sm-0" type="submit" name="logout">'.$_SESSION['email_user'].'</button>
+                    </form> 
+           
+                
+           ';
+                }
+                else{
+                echo  ' <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav mr-auto"><li class="nav-item active ">
+                <a class="nav-link " href="assets/html/interact.php"style="color:white">Interactions <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active ">
+                <a class="nav-link " href="assets/html/reps.php" style="color:white">Réponses  <span class="sr-only">(current)</span></a>
+            </li></ul></div>
+            <form class="form-inline my-2 my-lg-0" method="POST" action="assets/html/patdesh.php">
+                <button class="btn btn-danger s my-2 my-sm-0" type="submit" name="logout">'.$_SESSION['email_user'].'</button>
+                </form> 
+                
+       ';}
+            }
+            echo '
+             <form class="form-inline my-2 my-lg-0" method="POST" action="includes/logout.php">
+            <button class="btn btn-danger my-2 my-sm-0" type="submit" name="logout">Se déconecter</button>
             </form> ';
             }
             else{
-            echo '<form class="form-inline my-2 my-lg-0" method="POST" action="assets/html/auth.php">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit" name="login">Se connecter</button>
+            echo ' <form class="form-inline my-2 my-lg-0" method="POST" action="assets/html/auth.php">
+            <button class="btn btn-danger my-2 my-sm-0" type="submit" name="login">Se connecter</button>
             </form>
             <form class="form-inline my-2 my-lg-0" method="POST" action="assets/html/inscriptot.php">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit" name="insci">inscription</button>
-            </form>';}
+            <button class="btn btn-danger my-2 my-sm-0" type="submit" name="insci">inscription</button>
+            </form> ';}
             ?>
         </div>
     </nav>
-    <header>
+    <header >
 
-        <div class="jumbotron" style="background-image: url('assets/img/8.jpeg');height: 100vh;background-repeat: no-repeat;
+        <div class=" jumbotron" height="1500px"style="background-color:transparent ; height: 180vh;background-repeat: no-repeat;
         background-size:cover;">
             <br><br>
-            <h1 class="display-3" style="color:rgb(51, 51, 51)">Asslema ,<br>Sahtek w sahet bledek <br>bin ydik !
+            <h1 class="display-3" style="color:white">Asslema ,<br>Sahtek w sahet bledek <br>bin ydik !
             </h1>
 
             <p class="lead">
                 <hr>
-                <a class="btn btn-danger btn-lg" href="#" role="button">Tala 3la Statistiques</a>
+                <a class="btn btn-danger btn-lg" href="assets/html/stat.php" role="button">Tala 3la Statistiques</a>
+            </p>
+        </div></header><br><br>
+        <br><br><br><br>
+        
+        r><br><br>
+        
+        <br><br><br><br><br>
+        <br><br><br><br>
+        
+        
+        
+      
+        <diV class="container bg-light">
+        <div class=" jumbotron " style="background-image:url('assets/img/8.jpeg');background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;height: 50%; background-attachment: fixed" >
+            <br><br>
+            <h1 class="display-3" style="color:gray">
+            </h1>
+
+            <p class="lead">
+                <hr>
+                <br> 
+                <br>
+                
+               
             </p>
         </div>
-        <br>
-        <br><br><br><br>
-        <div style="background-color:rgb(51, 51, 51);">
-            <table " id=" tab" class="col-md-12">
-                <tbody>
-                    <tr>
-                        <td class="display-4"> Confirmées</td>
-
-                        <td class="display-4">Morts</td>
-
-                        <td class="display-4">Gerir</td>
-                    </tr>
-                    <tr>
-
-                        <td class="compteur display-4" id="cc"><b nbcc="10">0</b></td>
-
-
-                        <td class="compteur display-4" id="mr"><b nbmr="0">0</b></td>
-
-                        <td class="compteur display-4" id="gr"><b nbgr="0">0</b></td>
-
-                    </tr>
-                </tbody>
-            </table>
-
-            <br>
-            <p class="display-4" style="color:whitesmoke;text-transform: uppercase;text-align: center;"><strong>suivis
-                    des cas
-                    contaminées de coronavirus en Tunisie.
-                </strong></p>
-        </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br>
-        <table class="col-md-12" style="background-color: black;">
+        <h2 class="display-2 "style="color:gray">Anti-covid19 est</h2>
+        <h4 style="color:Gray"><strong>  platform qui permet  au citoiyant de poser n'importe quelles questions au médecins qui vont 
+                    aussi repondre a tous les questions . <br>
+                    cC'est un moyen pour diffuser l'information et aussi pour sensibiliser les gens a suivre les instructions gouvernementales car les chiffres sont vraiment alarmants !
+            </strong></h4>
+             <h2 class="display-2 "style="color:red">C'est le tempt ou jamais</h2>
+        <h4 style="color:Gray;">Le virus qui entraîne la COVID-19 se transmet ‎principalement par des gouttelettes produites 
+            ‎lorsqu’une personne infectée tousse, éternue, ou ‎lors d’une expiration.
+            Ces gouttelettes sont trop ‎lourdes pour rester dans l’air 
+            et tombent ‎rapidement sur le sol ou sur toute surface proche.‎
+            Vous pouvez être infecté en respirant le virus, 
+            si ‎vous êtes à proximité d’une personne malade, 
+            ou en ‎touchant une surface contaminée puis vos yeux, ‎votre nez ou votre bouche.‎</h4>
+       
+        <table class="col-md-12 card border-light" >
             <tr>
                 <td>
                     <!--Carousel Wrapper-->
@@ -164,6 +212,7 @@
                                             tsakrha mli7 </strong></h3>
 
                                 </div>
+                                
                             </div>
                             <div class="carousel-item">
                                 <!--Mask color-->
@@ -227,7 +276,13 @@
             </tr>
         </table>
         <br><br>
-    </header>
+        <h4 style="color:Gray;">Avec la mise en place d’un numéro vert (80.101.919) et d’un numéro d’appel d’urgence d’aide médicale le 190, un site web vient d’être lancé à l’initiative par la Junior Entreprise ESEN pour permettre de suivre l’évolution de la pandémie du Coronavirus en Tunisie.
+
+Pour rappel le numéro vert 80.101.919 est mis à la disposition de la population pour le signalement des cas suspects d’infection par le Coronavirus.
+
+Le numéro d’appel d’aide médicale SAMU (190) est réservé aux personnes qui pensent être contaminés.</h4>
+            </div>
+        </div>
     <!--jQuery library-->
     <script src="assets/js/jquery.min.js"></script>
 

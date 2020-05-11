@@ -22,41 +22,6 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top mb-10">
-        <a href="../../index.php">
-            <img src="../img/logo.png" width="70px">
-        </a>
-        
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
-            aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarColor02">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active ">
-                    <a class="nav-link " href="../../index.php">Acceuil <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="interact.php">Interaction <span class="sr-only">(current)</span> </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="reclamer.php">Reclamer</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="stat.php">Statistique </a>
-                </li>
-           
-            </ul>
-
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                <button class="btn btn-primary my-2 my-sm-0" type="submit">sing up</button>
-
-            </form>
-        </div>
-    </nav>
     <header>
 
         <!-- Full Page Intro -->
@@ -87,16 +52,20 @@
                                 data-wow-delay="0.3s">La maladie à coronavirus 2019 (COVID-19) est une maladie
                                 infectieuse provoquée par un nouveau virus qui n'avait encore jamais été identifié chez
                                 l'être humain. </a>
-
-                            <h4 style="color: ghostwhite" class="h1-responsive font-weight wow fadeInLeft "
-                                data-wow-delay="0.3s">Si vous voulez être parmis les beneficies de notre Plateform et
-                                vous n'avez pas un
-                                compte <a href="inscrip.php"> s'inscrire</a> </h4>
-                            <a style="color: whitesmoke" class="btn btn-outline-white wow fadeInLeft"
+                                <a style="color: whitesmoke" class="btn btn-outline-white wow fadeInLeft"
                                 data-wow-delay="0.3s">Ce virus provoque une maladie respiratoire (analogue à la grippe)
                                 avec des symptômes
                                 comme la toux, la fièvre et, dans les cas les plus sévères, une pneumonie. On peut s'en
-                                protéger en se lavant fréquemment les mains, et en évitant de se toucher le visage.</a>
+                                protéger en se lavant fréquemment les mains, et en évitant de se toucher le visage.</a>    
+                            <h4 style="color: ghostwhite" class="h1-responsive font-weight wow fadeInLeft "
+                                data-wow-delay="0.3s">Si vous voulez être parmis les beneficies de notre Plateform et
+                                vous n'avez pas un
+                                compte <form method="POST" action="inscriptot.php"><div class="text-center mt-4">
+                                        <button class="btn btn-outline-danger" type="submit" name="login"> s'inscrire
+                                        </button>
+                                        <hr class="hr-light mb-3 mt-4">
+                                    </div></form> 
+                            
                         </div>
                         <!--Grid column-->
                         <!--Grid column-->
@@ -144,20 +113,6 @@
                                         <button class="btn btn-outline-light" type="submit" name="login"> Connecter
                                         </button>
                                         <hr class="hr-light mb-3 mt-4">
-                                        <form method="POST" action="../../includes/logout.php">
-                                            <button class="btn btn-outline-light" type="submit" name="logout"> déconnecter
-                                            </button>
-                                        </form>
-                                        <div class="inline-ul text-center">
-
-                                            <i class="fa fa-facebook-official white-text"><a
-                                                    href="wwww.facebook.com"></a></i>
-                                            <i class="fa fa-google-plus white-text"><a
-                                                    href="www.googleplus.com"></a></i>
-                                            <i class="fa fa-instagram white-text"><a href="www.instagram.com"></a> </i>
-
-                                        </div>
-
                                     </div>
                                 </div>
                         </div>
